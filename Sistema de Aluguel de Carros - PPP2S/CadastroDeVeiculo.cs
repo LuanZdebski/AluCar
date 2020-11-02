@@ -256,7 +256,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             novoVeiculo.bancosCouro = checkBancosCouro.Checked;
             novoVeiculo.cambioAutomatico = checkCambioAuto.Checked;
 
-            novoVeiculo.status = "Disponível";
+            novoVeiculo.status = true;
 
             ListVeiculos.Add(novoVeiculo);
 

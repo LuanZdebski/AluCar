@@ -19,7 +19,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
         
         Inicio TelaInicial;
        
-        List<Veiculo> ListVeiculos = new List<Veiculo>();
+        public List<Veiculo> ListVeiculos = new List<Veiculo>();
         
 
         public ControleFrota(Inicio TelaInicial)
@@ -136,7 +136,9 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
                 linha[2] = ListVeiculos[i].ano;
                 linha[3] = ListVeiculos[i].cor;
                 linha[4] = ListVeiculos[i].categoria;
-                linha[5] = ListVeiculos[i].status;
+                if (ListVeiculos[i].status) { linha[5] = "Disponível"; }
+                if (!ListVeiculos[i].status) { linha[5] = "Indisponível"; }
+
 
                 TabelaFrota.Rows.Add(linha);
                 
@@ -151,17 +153,22 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
         private void btnRemoverVeiculo_Click(object sender, EventArgs e)
         {
             string placa = PlacaSelect();
-
+       
+            
             if (ListVeiculos.Exists(v => v.placa == placa))
             {
-                DialogResult dialogResult = MessageBox.Show("O veiculo sera removido da frota,tem certeza?", "Remover Veiculo", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (ListVeiculos.Find(v => v.placa == PlacaSelect()).status)
                 {
-                    ListVeiculos.Remove(ListVeiculos.Find(v => v.placa == PlacaSelect()));
-                    MessageBox.Show("O veiculo de placa: " + placa + " foi removido");
-                    AtualizarTabela();
-                    SalvarListaVeiculos(banco, ListVeiculos);
+                    DialogResult dialogResult = MessageBox.Show("O veiculo sera removido da frota,tem certeza?", "Remover Veiculo", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        ListVeiculos.Remove(ListVeiculos.Find(v => v.placa == PlacaSelect()));
+                        MessageBox.Show("O veiculo de placa: " + placa + " foi removido");
+                        AtualizarTabela();
+                        SalvarListaVeiculos(banco, ListVeiculos);
+                    }
                 }
+                else { MessageBox.Show("Veículo precisa estar disponível para exclusão"); }
             }
             else { MessageBox.Show("Selecione a linha do veiculo que deseja excluir"); }
            
@@ -189,7 +196,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             {
                 Veiculo veiculo = new Veiculo();
                 veiculo = ListVeiculos.Find(v => v.placa == placa);
-                string[] adcionais = new string[8] { "Ar condicionado", "Direção hidraulica", "Trava elétrica", "teto solar", "Vidro elétrico", "Bancos de couro", "Camera de ré", "Cambio automatico" };
+                string[] adcionais = new string[8] { "Ar condicionado", "Direção hidraulica", "Trava elétrica", "Teto solar", "Vidro elétrico", "Bancos de couro", "Camera de ré", "Cambio automatico" };
                 StringWriter adcionaisLinha = new StringWriter();
 
                 if (veiculo.arCondicionado) { adcionaisLinha.Write(adcionais[0] + Environment.NewLine); }
@@ -217,6 +224,19 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             
         }
 
+        private void btnLocarVeiculo_Click(object sender, EventArgs e)
+        {
+            if (ListVeiculos.Find(v => v.placa == PlacaSelect()).status)
+            {
+                string placa = PlacaSelect();
 
+                Veiculo veiculo = ListVeiculos.Find(v => v.placa == PlacaSelect());
+
+
+                LocarVeiculo locar = new LocarVeiculo(TelaInicial, veiculo, TelaInicial.TelaClientes.ListAlugueis);
+                locar.Show();
+            }
+            else { MessageBox.Show("Veículo indisponível"); }
+        }
     }
 }

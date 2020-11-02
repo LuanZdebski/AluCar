@@ -55,3 +55,5 @@ C:\Users\luanm\Desktop\Nova pasta\Sistema\Sistema-AluCar\Sistema de Aluguel de C
 C:\Users\luanm\Desktop\Nova pasta\Sistema\Sistema-AluCar\Sistema de Aluguel de Carros - PPP2S\obj\Debug\Sistema_de_Aluguel_de_Carros___PPP2S.Clientes.resources
 C:\Users\luanm\Desktop\Nova pasta\Sistema\Sistema-AluCar\Sistema de Aluguel de Carros - PPP2S\obj\Debug\Sistema_de_Aluguel_de_Carros___PPP2S.Financeiro.resources
 C:\Users\luanm\Desktop\Nova pasta\Sistema\Sistema-AluCar\Sistema de Aluguel de Carros - PPP2S\obj\Debug\Sistema_de_Aluguel_de_Carros___PPP2S.TI.resources
+C:\Users\luanm\Desktop\Nova pasta\Sistema\Sistema-AluCar\Sistema de Aluguel de Carros - PPP2S\obj\Debug\Sistema_de_Aluguel_de_Carros___PPP2S.LocarVeiculo.resources
+C:\Users\luanm\Desktop\Nova pasta\Sistema\Sistema-AluCar\Sistema de Aluguel de Carros - PPP2S\obj\Debug\Sistema_de_Aluguel_de_Carros___PPP2S.RetornoDeVeiculo.resources

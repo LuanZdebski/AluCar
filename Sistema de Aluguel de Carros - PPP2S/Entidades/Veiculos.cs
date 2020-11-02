@@ -19,7 +19,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S.Entidades
         public string concessionaria { get; set; }
         public float valorDeCompra { get; set; }
 
-        public string status { get; set; }
+        public bool status { get; set; }
        
         
         public bool arCondicionado { get; set; }

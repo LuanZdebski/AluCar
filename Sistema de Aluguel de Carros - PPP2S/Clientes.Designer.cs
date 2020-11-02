@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnAbaTI = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
@@ -43,16 +43,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtLogadoComo = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.TabelaClientes = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabelaAlugueis = new System.Windows.Forms.DataGridView();
+            this.btnCancelarLocacao = new System.Windows.Forms.Button();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataDeRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Devolucao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDeAluguel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Plano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDetalhes = new System.Windows.Forms.Button();
+            this.btnDevolucao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabelaClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelaAlugueis)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFechar
@@ -189,76 +191,82 @@
             this.pictureBox2.TabIndex = 36;
             this.pictureBox2.TabStop = false;
             // 
-            // TabelaClientes
+            // TabelaAlugueis
             // 
-            this.TabelaClientes.AllowUserToAddRows = false;
-            this.TabelaClientes.AllowUserToDeleteRows = false;
-            this.TabelaClientes.AllowUserToResizeColumns = false;
-            this.TabelaClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.TabelaClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.TabelaClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.TabelaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.TabelaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.TabelaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
+            this.TabelaAlugueis.AllowUserToAddRows = false;
+            this.TabelaAlugueis.AllowUserToDeleteRows = false;
+            this.TabelaAlugueis.AllowUserToResizeColumns = false;
+            this.TabelaAlugueis.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.TabelaAlugueis.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.TabelaAlugueis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.TabelaAlugueis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaAlugueis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.TabelaAlugueis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.TabelaAlugueis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cargo,
             this.Setor,
             this.DataDeRetirada,
             this.Devolucao,
-            this.TipoDeAluguel});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TabelaClientes.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TabelaClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.TabelaClientes.Location = new System.Drawing.Point(12, 177);
-            this.TabelaClientes.Name = "TabelaClientes";
-            this.TabelaClientes.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.TabelaClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.TabelaClientes.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.TabelaClientes.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabelaClientes.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.TabelaClientes.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.TabelaClientes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.TabelaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TabelaClientes.Size = new System.Drawing.Size(926, 374);
-            this.TabelaClientes.TabIndex = 37;
+            this.Plano});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TabelaAlugueis.DefaultCellStyle = dataGridViewCellStyle11;
+            this.TabelaAlugueis.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.TabelaAlugueis.Location = new System.Drawing.Point(12, 177);
+            this.TabelaAlugueis.Name = "TabelaAlugueis";
+            this.TabelaAlugueis.ReadOnly = true;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.TabelaAlugueis.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.TabelaAlugueis.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.TabelaAlugueis.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabelaAlugueis.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.TabelaAlugueis.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.TabelaAlugueis.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.TabelaAlugueis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.TabelaAlugueis.Size = new System.Drawing.Size(926, 374);
+            this.TabelaAlugueis.TabIndex = 37;
             // 
-            // Nome
+            // btnCancelarLocacao
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.HeaderText = "Cliente";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
+            this.btnCancelarLocacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnCancelarLocacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarLocacao.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarLocacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnCancelarLocacao.Location = new System.Drawing.Point(831, 129);
+            this.btnCancelarLocacao.Name = "btnCancelarLocacao";
+            this.btnCancelarLocacao.Size = new System.Drawing.Size(107, 43);
+            this.btnCancelarLocacao.TabIndex = 38;
+            this.btnCancelarLocacao.Text = "Cancelar locação";
+            this.btnCancelarLocacao.UseVisualStyleBackColor = false;
+            this.btnCancelarLocacao.Click += new System.EventHandler(this.btnCancelarLocacao_Click);
             // 
             // Cargo
             // 
+            this.Cargo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Cargo.HeaderText = "Veículo";
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 220;
             // 
             // Setor
             // 
@@ -278,11 +286,40 @@
             this.Devolucao.Name = "Devolucao";
             this.Devolucao.ReadOnly = true;
             // 
-            // TipoDeAluguel
+            // Plano
             // 
-            this.TipoDeAluguel.HeaderText = "Tipo de aluguel";
-            this.TipoDeAluguel.Name = "TipoDeAluguel";
-            this.TipoDeAluguel.ReadOnly = true;
+            this.Plano.HeaderText = "Tipo de aluguel";
+            this.Plano.Name = "Plano";
+            this.Plano.ReadOnly = true;
+            this.Plano.Width = 140;
+            // 
+            // btnDetalhes
+            // 
+            this.btnDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnDetalhes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalhes.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalhes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnDetalhes.Location = new System.Drawing.Point(718, 129);
+            this.btnDetalhes.Name = "btnDetalhes";
+            this.btnDetalhes.Size = new System.Drawing.Size(107, 43);
+            this.btnDetalhes.TabIndex = 39;
+            this.btnDetalhes.Text = "Detalhes da locação";
+            this.btnDetalhes.UseVisualStyleBackColor = false;
+            this.btnDetalhes.Click += new System.EventHandler(this.btnDetalhes_Click);
+            // 
+            // btnDevolucao
+            // 
+            this.btnDevolucao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnDevolucao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolucao.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolucao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnDevolucao.Location = new System.Drawing.Point(605, 129);
+            this.btnDevolucao.Name = "btnDevolucao";
+            this.btnDevolucao.Size = new System.Drawing.Size(107, 43);
+            this.btnDevolucao.TabIndex = 40;
+            this.btnDevolucao.Text = "Entrada de devolução";
+            this.btnDevolucao.UseVisualStyleBackColor = false;
+            this.btnDevolucao.Click += new System.EventHandler(this.btnDevolucao_Click);
             // 
             // Clientes
             // 
@@ -290,7 +327,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(950, 600);
-            this.Controls.Add(this.TabelaClientes);
+            this.Controls.Add(this.btnDevolucao);
+            this.Controls.Add(this.btnDetalhes);
+            this.Controls.Add(this.btnCancelarLocacao);
+            this.Controls.Add(this.TabelaAlugueis);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtLogadoComo);
             this.Controls.Add(this.pictureBox1);
@@ -307,7 +347,7 @@
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabelaClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelaAlugueis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,12 +365,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label txtLogadoComo;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView TabelaClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridView TabelaAlugueis;
+        private System.Windows.Forms.Button btnCancelarLocacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Setor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataDeRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Devolucao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDeAluguel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Plano;
+        private System.Windows.Forms.Button btnDetalhes;
+        private System.Windows.Forms.Button btnDevolucao;
     }
 }

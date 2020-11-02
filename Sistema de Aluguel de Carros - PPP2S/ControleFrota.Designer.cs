@@ -98,6 +98,7 @@
             this.btnLocarVeiculo.TabIndex = 10;
             this.btnLocarVeiculo.Text = "Locar veículo";
             this.btnLocarVeiculo.UseVisualStyleBackColor = false;
+            this.btnLocarVeiculo.Click += new System.EventHandler(this.btnLocarVeiculo_Click);
             // 
             // TabelaFrota
             // 
@@ -343,7 +344,6 @@
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
-            this.Status.Width = 80;
             // 
             // ControleFrota
             // 

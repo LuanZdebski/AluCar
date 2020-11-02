@@ -67,6 +67,7 @@
     <Compile Include="ControleFrota.Designer.cs">
       <DependentUpon>ControleFrota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\Aluguel.cs" />
     <Compile Include="Entidades\Funcionario.cs" />
     <Compile Include="Entidades\Veiculos.cs" />
     <Compile Include="Financeiro.cs">
@@ -87,6 +88,12 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocarVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocarVeiculo.Designer.cs">
+      <DependentUpon>LocarVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +107,12 @@
     </Compile>
     <Compile Include="RegistroDeFuncionario.Designer.cs">
       <DependentUpon>RegistroDeFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RetornoDeVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetornoDeVeiculo.Designer.cs">
+      <DependentUpon>RetornoDeVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="TI.cs">
       <SubType>Form</SubType>
@@ -125,6 +138,9 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocarVeiculo.resx">
+      <DependentUpon>LocarVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="RegistroDeFuncionario.resx">
       <DependentUpon>RegistroDeFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetornoDeVeiculo.resx">
+      <DependentUpon>RetornoDeVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TI.resx">
       <DependentUpon>TI.cs</DependentUpon>
