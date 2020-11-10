@@ -41,6 +41,7 @@
             this.btnAbaTI = new System.Windows.Forms.Button();
             this.txtLogadoComo = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnLogOff = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -199,12 +200,26 @@
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
             // 
+            // btnLogOff
+            // 
+            this.btnLogOff.BackColor = System.Drawing.Color.Green;
+            this.btnLogOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnLogOff.Location = new System.Drawing.Point(857, 12);
+            this.btnLogOff.Name = "btnLogOff";
+            this.btnLogOff.Size = new System.Drawing.Size(51, 23);
+            this.btnLogOff.TabIndex = 36;
+            this.btnLogOff.Text = "LogOff";
+            this.btnLogOff.UseVisualStyleBackColor = false;
+            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(950, 600);
+            this.Controls.Add(this.btnLogOff);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtLogadoComo);
             this.Controls.Add(this.btnAbaTI);
@@ -244,6 +259,7 @@
         private System.Windows.Forms.Button btnAbaTI;
         private System.Windows.Forms.Label txtLogadoComo;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnLogOff;
     }
 }
 

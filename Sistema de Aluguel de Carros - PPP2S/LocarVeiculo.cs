@@ -19,6 +19,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
         List<Aluguel> ListAlugueis;
         Clientes clientes;
         float ValorVeiculo;
+        
         public LocarVeiculo(Inicio TelaInicial,Veiculo veiculo, List<Aluguel> ListAlugueis)
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             this.frota = TelaInicial.TelaControleFrota;
             this.clientes = TelaInicial.TelaClientes;
             this.ValorVeiculo = veiculo.valorDeCompra;
-            AtualizarValores();
+            
 
             txtModelo.Text = veiculo.fabricante + " " + veiculo.modelo + " " + veiculo.ano;
             txtCor.Text = veiculo.cor;
@@ -44,7 +45,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             if (veiculo.bancosCouro) { adcionaisLinha.Write(adcionais[5] + Environment.NewLine); }
             if (veiculo.cameraRe) { adcionaisLinha.Write(adcionais[6] + Environment.NewLine); }
             if (veiculo.cambioAutomatico) { adcionaisLinha.Write(adcionais[7] + Environment.NewLine); }
-
+            AtualizarValores();
             txtAdicionais.Text = adcionaisLinha.ToString();
         }
 
@@ -88,14 +89,14 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             if (cBoxPlano.Text == "Km Controlada")
             {
                 
-                txtValorDiaria.Text = ((ValorVeiculo / 1300) - ((ValorVeiculo / 1300) / 100 * desconto)).ToString();
+                txtValorDiaria.Text = ((ValorVeiculo / 1300) - ((ValorVeiculo / 1300) / 100 * desconto)).ToString("C2");
                 txtValorTotal.Text = "";
                 valor = (((ValorVeiculo / 1300) - ((ValorVeiculo / 1300) / 100 * desconto)));
             }
             if (cBoxPlano.Text == "Km Livre")
             {
                 
-                txtValorDiaria.Text = ((ValorVeiculo / 1000) - ((ValorVeiculo / 1000) / 100 * desconto)).ToString();
+                txtValorDiaria.Text = ((ValorVeiculo / 1000) - ((ValorVeiculo / 1000) / 100 * desconto)).ToString("C2");
                 txtValorTotal.Text = "";
                 valor =  (((ValorVeiculo / 1000) - ((ValorVeiculo / 1000) / 100 * desconto)));
             }
@@ -103,7 +104,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             if (tBoxRetirada.MaskCompleted && tBoxDevolucao.MaskCompleted) 
             {
               
-                txtValorTotal.Text = "R$" + ((valor * CalcularDiarias()) + ((valor * CalcularDiarias()) / 100) * juros);
+                txtValorTotal.Text = ((valor * CalcularDiarias()) + ((valor * CalcularDiarias()) / 100) * juros).ToString("C2");
             }
         }
         private int CalcularDiarias()
@@ -115,7 +116,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
                 retirada = Convert.ToDateTime(tBoxRetirada.Text);
                 devolucao = Convert.ToDateTime(tBoxDevolucao.Text);
             }
-            catch { return 0; }
+            catch { return 1; }
 
             int dif = Convert.ToInt32((devolucao - retirada).TotalDays);
 
@@ -148,12 +149,35 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
      
         private void tBoxDevolucao_TextChanged(object sender, EventArgs e)
         {
-            if (tBoxRetirada.MaskCompleted && tBoxDevolucao.MaskCompleted) { txtNumDiarias.Text = CalcularDiarias() + " Diárias"; }
+            if (tBoxDevolucao.MaskCompleted) 
+            {
+             
+                if (Convert.ToDateTime(tBoxDevolucao.Text) <= Convert.ToDateTime(tBoxRetirada.Text))
+                {
+                    MessageBox.Show("Data inválida, devolução não pode ser antes ou no mesmo dia de retirada. Alterada para q dia depois da retirada");
+                    DateTime retirada = Convert.ToDateTime(tBoxRetirada.Text);
+                    retirada = retirada.AddDays(1);
+                    tBoxDevolucao.Text = retirada.ToString();
+
+                }
+                txtNumDiarias.Text = CalcularDiarias() + " Diárias";
+                AtualizarValores();
+            }
         }
 
         private void tBoxRetirada_TextChanged(object sender, EventArgs e)
         {
-            if (tBoxRetirada.MaskCompleted && tBoxDevolucao.MaskCompleted) { txtNumDiarias.Text = CalcularDiarias() + " Diárias"; }
+            if (tBoxRetirada.MaskCompleted)
+            {
+                if (Convert.ToDateTime(tBoxRetirada.Text) < DateTime.Today)
+                {
+                    MessageBox.Show("Data inválida. Alterada para o dia de hoje");
+                    tBoxRetirada.Text = DateTime.Now.ToString();
+
+                }
+                txtNumDiarias.Text = CalcularDiarias() + " Diárias";
+                AtualizarValores();
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
 {
     public partial class Inicio : Form
     {
-        bool estaLogado = false;
+        public bool estaLogado = false;
         public string contaLogada;
 
         public ControleFrota TelaControleFrota;
@@ -30,6 +30,12 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
         }
         private void Inicio_Shown(object sender, EventArgs e)
         {
+            TrocarTelas(this, login);
+        }
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            estaLogado = false;
+            contaLogada = "";
             TrocarTelas(this, login);
         }
         private void Inicio_Load(object sender, EventArgs e)
@@ -102,5 +108,6 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             estaLogado = true;
         }
 
+   
     }
 }

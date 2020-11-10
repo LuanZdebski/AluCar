@@ -41,15 +41,19 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
             bool multaAtraso = checkMultaAtraso.Checked;
             bool dano = checkDanos.Checked;
             bool multaSeguro = checkMultaSeguro.Checked;
-            bool valido = false;
-            bool valido2 = false;
-            bool valido3= false;
-            if (multaKm && nUpDownQntKm.Value > 0) { valido = true; }
-            else { MessageBox.Show("Informe a quantidade de quilimetragem a ser cobrada, ou desative a cobrança"); valido = false; }
-            if (dano && descDano.Text != "") { valido2 = true; }
-            else { MessageBox.Show("Descreva os danos do veículo, ou desative a cobrança"); valido2 = false; }
-            if (multaAtraso && nUpDownDias.Value > 0) { valido3 = true; }
-            else { MessageBox.Show("Informe a quantidade de diárias a ser cobrada, ou desative a cobrança"); valido3 = false; }
+            bool valido = true;
+            bool valido2 = true;
+            bool valido3= true;
+            if (multaKm && nUpDownQntKm.Value == 0) { MessageBox.Show("Informe a quantidade de quilimetragem a ser cobrada, ou desative a cobrança"); valido = false; }
+            else if (multaKm && nUpDownQntKm.Value > 0) { valido = true; }
+            else if (!multaKm) { valido = true; }
+            if (dano && descDano.Text == "") { MessageBox.Show("Descreva os danos do veículo, ou desative a cobrança"); valido2 = false; }
+            else if (dano && descDano.Text != "") { valido2 = true; }
+            else if (!dano) { valido2 = true; }
+            if (multaAtraso && nUpDownDias.Value == 0) { MessageBox.Show("Informe a quantidade de diárias a ser cobrada, ou desative a cobrança"); valido3 = false; }
+            else if (multaAtraso && nUpDownDias.Value > 0) { valido3 = true; }
+            else if (!multaAtraso) { valido3 = true; }
+
 
             if (valido && valido2 && valido3)
             {

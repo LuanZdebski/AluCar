@@ -34,6 +34,11 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            LoginIn();
+            
+        }
+        private void LoginIn()
+        {
             if (tBoxUsuario.Text != "" && tBoxSenha.Text != "")
             {
                 if (ListFuncionarios.Exists(f => f.login == tBoxUsuario.Text))
@@ -42,18 +47,19 @@ namespace Sistema_de_Aluguel_de_Carros___PPP2S
                     funcionario = ListFuncionarios.Find(f => f.login == tBoxUsuario.Text);
                     if (funcionario.senha == tBoxSenha.Text)
                     {
-                        
+
                         TelaInicial.contaLogada = funcionario.nome;
+                        TelaInicial.estaLogado = true;
                         TelaInicial.Logar();
                         TelaInicial.TrocarTelas(this, TelaInicial);
-                        
+
 
                     }
+                    else { MessageBox.Show("Senha ou usuário invalido"); }
                 }
-                else { MessageBox.Show("Senha ou usuários invalido"); }
+                else { MessageBox.Show("Senha ou usuário invalido"); }
             }
             else { MessageBox.Show("Insira suas credenciais"); }
-            
         }
         static private List<Funcionario> CarregarBanco(String banco)
         {
